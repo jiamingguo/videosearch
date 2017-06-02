@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
+import VideoList from'./components/video_list';
 
 // give the path to import files. Don't need to do that for libraries sicne they are namespaces
 // files are different, have to specify relative path
@@ -68,6 +69,7 @@ class App extends Component {
         return(
             <div>
                 <SearchBar />
+                <VideoList videos={this.state.videos} />
             </div>
         );
     }
