@@ -9,7 +9,10 @@ const VideoList = (props) => {
 
     // loop: for loop is not recommended. Instead, use the map function. mapping a function to every item in array
     const videoItems = videos.map((video) => {
-        return <VideoListItem key={video.etag} video={video}/>
+        return <VideoListItem
+            onVideoSelect={props.onVideoSelect}
+            key={video.etag}
+            video={video}/>
         // etag could be an unique key for each video. This could also used in array as unique key to an item
         // you can find etag in the Youtube API result set: F12 -> NetWork -> search?part=blahblah... -> items -> etag
     });
